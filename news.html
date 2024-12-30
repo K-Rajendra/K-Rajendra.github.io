@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News - Rajendra Kumar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Rajendra Kumar</h1>
+            <p>Assistant Professor, Computer Science and Engineering, IIT Delhi</p>
+        </div>
+        
+        <!-- Navigation inside header, aligned right -->
+        <nav>
+            <ul>
+                <li><a href="index.html#about">About Me</a></li>
+                <li><a href="index.html#news">News</a></li>
+                <li><a href="index.html#publications">Publications</a></li>
+                <li><a href="index.html#teaching">Teaching</a></li>
+                <li><a href="index.html#student">Students</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section class="content-section">
+            <h2>News</h2>
+            <ul class="news-list">
+                <li>Oct 24: Our paper on "On Beating 2^n for CVP" is accepted to SOSA-25.</li>
+                <li>Oct 24: Our paper on Quantum Algorithms for Shortest Vector Problem is accepted to SIAM Journal on Computing (SICOMP).</li>
+                <li>Sept 24: Joined Amar Nath and Shashi Khosla School of Information Technology as an associated Faculty.</li>
+                <li>Jan 24: Joined as a faculty in Computer Science and Engineering department at IIT Delhi.</li>
+                <li>Jun 21: Successfully defended my PhD thesis.</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Rajendra Kumar. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    window.scrollTo({
+                        top: targetElement.offsetTop - headerHeight,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

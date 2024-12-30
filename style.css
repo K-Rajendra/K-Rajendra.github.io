@@ -1,0 +1,231 @@
+/* Basic Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F5F5F5; /* Light Gray */
+    color: #333; /* Dark Gray for text */
+}
+
+/* Combined Header and Navigation Styling */
+header {
+    background-color: #E6E6FA; /* Soft Lavender for header */
+    color: #4A4A4A; /* Darker Gray for better visibility of text */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between; /* Aligns content to left and right */
+    padding: 8px 20px; /* Reduced padding for a smaller header */
+    margin: 0; /* Ensure there's no margin after header */
+    border-bottom: 2px solid #ccc; /* Add a subtle bottom border */
+}
+
+.header-content {
+    text-align: left; /* Align header content to the left */
+    font-size: 1.3em; /* Adjust the font size to make it smaller */
+    line-height: 1.2;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5em; /* Reduced font size */
+}
+
+header p {
+    margin: 5px 0 0 0;
+    font-style: italic;
+    font-size: 0.9em; /* Reduced font size */
+}
+
+/* Updated Navigation Styling */
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #E6E6FA; /* Lavender for a soft, elegant look */
+    padding: 15px 0; /* Increase padding for a larger height */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-left: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Ensure the items are aligned horizontally */
+}
+
+nav ul li {
+    margin: 0 20px; /* Increase margin for more spacing between items */
+}
+
+nav ul li a {
+    color: #4A4A4A; /* Darker Gray for better readability */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em; /* Increase font size for better visibility */
+    padding: 10px 15px;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #D1C4E9; /* Light Purple for hover effect */
+    color: #4A90E2; /* Light Blue for text on hover */
+    border-radius: 5px; /* Rounded corners on hover */
+}
+
+/* Main Content Styling */
+main {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+.content-section {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Section Headings */
+.content-section h2 {
+    color: #4A90E2; /* Light Blue */
+    margin-bottom: 15px;
+}
+
+/* About Me Section Styling */
+.about-me {
+    display: flex;
+    align-items: center;
+}
+
+.about-me img {
+    width: 200px;
+    height: 200px;
+    border-radius: 8px; /* Square image with slight rounding */
+    margin-right: 20px;
+    object-fit: cover;
+    border: 3px solid #88C0D0; /* Soft Teal border */
+}
+
+/* News Styling */
+.news-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.news-list li {
+    margin-bottom: 10px;
+}
+
+/* Example CSS for News Section */
+.news-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.news-item {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.news-item a {
+    text-decoration: none;
+    color: #0056b3;
+}
+
+.news-item a:hover {
+    text-decoration: underline;
+}
+
+
+.view-all {
+    color: #4A90E2; /* Light Blue */
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.view-all:hover {
+    text-decoration: underline;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #88C0D0; /* Soft Teal */
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 20px;
+    position: relative;
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .about-me {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-me img {
+        margin: 0 0 20px 0;
+    }
+}
+
+/* Publications Section Styling */
+#publications li {
+    margin-bottom: 10px;
+    padding: 5px 0; /* Reduced padding for tighter spacing */
+}
+
+#publications li .title {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 5px; /* Reduced margin between title and next line */
+}
+
+#publications li .authors,
+#publications li .venue,
+#publications li .links {
+    margin: 0;
+    padding: 0;
+    font-size: 1em; /* Keep font size consistent */
+}
+
+#publications li .authors {
+    margin-bottom: 5px; /* Reduced space between authors and venue */
+}
+
+#publications li .venue {
+    margin-bottom: 5px; /* Reduced space between venue and links */
+}
+
+#publications li .links a {
+    font-size: 0.9em;
+    color: #4A90E2;
+    text-decoration: none;
+}
+
+#publications li .links a:hover {
+    text-decoration: underline;
+}
+
+.highlighted-note {
+    background-color: #fce4ec; /* Light pink background */
+    border-left: 5px solid #d81b60; /* Pink border on the left */
+    padding: 15px; /* Inner padding */
+    margin-bottom: 20px; /* Space below the note */
+    font-size: 1.1em; /* Slightly larger font size */
+    color: #333; /* Dark text for readability */
+}
+
