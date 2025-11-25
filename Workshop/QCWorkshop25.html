@@ -161,6 +161,25 @@
                 max-width: 340px;
             }
         }
+        .details-box {
+            display: none;
+            padding: 15px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background: #f9f9f9;
+            width: 100%;   /* takes full width of the screen/container */
+            max-width: 600px;  /* optional: prevents it from becoming too wide */
+            }
+
+    .details-link {
+            color: blue;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 18px;
+            display: inline-block;
+            margin-bottom: 5px;
+            }
     </style>
 </head>
 <body>
@@ -203,6 +222,11 @@
             <div class="person-affiliation">Virginia Tech</div>
         </div>
         <div class="person-card">
+            <img src="speaker-venkata.jpg" class="person-photo" alt="Venkata Koppula">
+            <div class="person-name"><a href="https://web.iitd.ac.in/~kvenkata/">Venkata Koppula</a></div>
+            <div class="person-affiliation">IIT Delhi</div>
+        </div>
+        <div class="person-card">
             <img src="speaker-nikhil.jpg" class="person-photo" alt="Nikhil Mande">
             <div class="person-name"><a href="https://mande-nikhil.github.io">Nikhil Mande</a></div>
             <div class="person-affiliation">University of Liverpool</div>
@@ -233,6 +257,7 @@
             <div class="person-affiliation">IBM Research
                 Bangalore</div>
         </div>
+       
         <!--
         <div class="person-card">
             <img src="speaker-tba.jpg" class="person-photo" alt="TBA">
@@ -299,6 +324,116 @@
             </tr>
         </tbody>
     </table>-->
+</section>
+
+<section>
+    <h2>Talk Details</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Speaker</th>
+                <th>Title and Abstract</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Avantika Agarwal</td>
+                <td><span class="details-link" onclick="toggleDetails('talk1')">
+                    Oracle Separations in Quantum Complexity
+                  </span>
+                  <div id="talk1" class="details-box">
+                    <p>Abstract: This talk will be split into two parts. First, we study classical oracle separations for the quantum-classical polynomial hierarchy, QCPH, which is the class of languages solvable by a constant number of alternating classical quantifiers followed by a quantum verifier. Our main result is that QCPH is infinite relative to a random oracle (previously, this was not even known relative to any oracle). We further prove that higher levels of PH are not contained in lower levels of QCPH relative to a random oracle; this is a strengthening of the somewhat recent result that PH is infinite relative to a random oracle (Rossman, Servedio, and Tan 2016). The oracle separation requires lower bounding a certain type of low-depth alternating circuit with some quantum gates. To establish this, we give a new switching lemma for quantum algorithms which may be of independent interest.</p>
+ 
+                    <p>Second, we study oracle separations in the quantum oracle model. In recent years, the quantum oracle model has found a lot of use in showing oracle separations between complexity classes and cryptographic primitives. It is generally assumed that proof techniques that do not relativize with respect to quantum oracles will also not relativize with respect to classical oracles. We show that this is not the case: specifically, we show that there is a quantum oracle problem that is contained in the class QMA, but not in a class we call polyQCPH. The class polyQCPH is equal to PSPACE with respect to classical oracles, and it is a well-known result that QMA is contained in PSPACE (also with respect to classical oracles). We believe our findings show the need for some caution when using these non-standard oracle models, particularly when showing separations between quantum and classical resources.</p>
+                        
+                    <p>This talk is based on joint works with Shalev Ben-David and Srijita Kundu.</p>
+                  </div> </td>
+            </tr>
+            <tr>
+                <td>Shashwat Agrawal</td>
+                <td>Quantum Algorithms for Learning with Errors.</td>
+            </tr>
+            <tr>
+                <td>Shweta Agrawal</td>
+                <td>Post Quantum Cryptography: Foundations, Opportunities and Beyond</td>
+            </tr>
+            <tr>
+                <td>Akshay Bansal</td>
+                <td>Quantum Cryptography</td>
+            </tr>
+            <tr>
+                <td>Venkata Koppula</td>
+                <td>Classical Verification of Quantum Computation</td>
+            </tr>
+            <tr>
+                <td>Nikhil Mande</td>
+                <td><span class="details-link" onclick="toggleDetails('talk2')">
+                    Quantum Search With Generalized Wildcards
+                  </span>
+                  <div id="talk2" class="details-box">
+                    <p>Abstract: In the "search with wildcards'' problem [Ambainis, Montanaro, Quantum Inf.~Comput.'14], one's goal is to learn an unknown bit-string x in {-1,1}^n. An algorithm may, at unit cost, test equality of any subset of the hidden string with a string of its choice. Ambainis and Montanaro showed a quantum algorithm of cost O(sqrt{n} log n) and a near-matching lower bound of Omega(sqrt{n}). Belovs [Comput.~Comp.'15] subsequently showed a tight O(sqrt{n}) upper bound.</p>
+ 
+                    <p>We consider a natural generalization of this problem, parametrized by a subset Q of 2^{[n]}, where an algorithm may test whether x_S = b for an arbitrary S in Q and b in {-1,1}^S of its choice, at unit cost. We show tight bounds for various choices of Q, such as sets of bounded size, contiguous blocks, prefixes, and only the full set. In particular, setting Q = 2^{[n]} recovers the tight bounds mentioned above.</p>
+                        
+                    <p>All of these results are derived using a framework that we develop. We show, using the primal adversary bound, that the quantum query complexity of learning x is characterized, up to a constant factor, by a particular abstract analytic optimization program.
+
+                        Based on joint work with Arjan Cornelissen, Subhasree Patro, Nithish Raja, and Swagato Sanyal.</p>
+                  </div> </td>
+            </tr>
+            <tr>
+                <td>Sikhar Patranabis</td>
+                <td><span class="details-link" onclick="toggleDetails('talk3')">
+                    Isogenies for Dummies: Abstract Frameworks for Isogeny-based Post-Quantum Cryptography
+                  </span>
+                  <div id="talk3" class="details-box">
+                    <p>Abstract: Isogenies have emerged as a viable alternative to lattice  for post-quantum cryptography over the past 20 years. However, due to the uniquely complex underlying mathematical features and security/efficiency properties, the landscape of  isogeny-based cryptography has remained somewhat limited and inaccessible to the wider cryptographic community. Additionally, building new cryptographic applications from isogenies has been a potentially tedious and time-consuming task.</p>
+ 
+                    <p>In this talk, I will present overviews of two frameworks for isogeny-based cryptography, namely “cryptographic group actions” and “cryptographic forensic categories”. These frameworks enable viewing isogeny-based cryptography through the lens of abstract and easy-to-understand algebraic structures combined with simple cryptographic hardness assumptions. I will showcase some applications of these frameworks in: (i) enabling simplified expositions of well-known cryptographic constructions from isogenies (e.g., CSIDH-based public-key encryption and the SQIsign family of digital signatures), and (ii) realizing new (plausibly) post-quantum instances of advanced cryptographic primitives from isogenies. I will hope to demonstrate the simplicity and usability of these frameworks for isogeny non-experts. Along the way, I will also talk about some hard problems that form the basis of isogeny-based cryptography, and their classical/quantum hardness as of today. </p>
+                        
+                    <p>No prior background in either cryptography or quantum computing will be necessary to follow the talk.</p>
+                  </div> </td>
+            </tr>
+            <tr>
+                <td>Jaikumar Radhakrishnan</td>
+                <td>Introduction to Quantum Algorithms</td>
+            </tr>
+            <tr>
+                <td>Nitin Saurabh</td>
+                <td><span class="details-link" onclick="toggleDetails('talk4')">
+                    Does Approximate Degree Compose?
+                  </span>
+                  <div id="talk4" class="details-box">
+                    <p>Abstract: A polynomial p(x) is said to approximate a Boolean function f:{0,1}^n -> {0,1} if |f(x)-p(x)| <= 1/3 for all x \in {0,1}^n.  
+                        The approximate degree of f, denoted adeg(f), is defined to be the minimal degree of an approximating polynomial for f.  
+                        It was introduced roughly 30 years back in a seminal work of Nisan and Szegedy (Computational Complexity 1994). 
+                        Since then it has become a powerful and versatile tool in theoretical computer science finding spectacular applications in circuit complexity, 
+                        quantum query complexity, communication complexity, computational learning, and differential privacy, to name a few.
+                        </p>
+ 
+                    <p>This talk will be about an important problem about approximate degree -- Does it compose? 
+                        Formally, for any two Boolean functions f and g, the composed function f o g is defined as, f o g (x_1, ... , x_n) = f(g(x_1), ..., g(x_n)), where x_i \in {0,1}^m. 
+                        In a beautiful and significant work, Sherstov (Theory of Computing 2013) showed that adeg(f o g) = O(adeg(f)adeg(g)). 
+                        The approximate degree composition problem posits that this upper bound is tight. That is, adeg(f o g) = \Omega(adeg(f) adeg(g)) for all f and g.  </p>
+                        
+                    <p>I will survey the current state of progress, including its connections to quantum algorithms.</p>
+                  </div> </td>
+            </tr>
+            <tr>
+                <td>K.V. Subrahmanyam</td>
+                <td>Mathematics for Quantum Computing</td>
+            </tr>
+            <tr>
+                <td>Dhinakaran Vinayagamurthy</td>
+                <td><span class="details-link" onclick="toggleDetails('talk5')">
+                    Qiskit deep dive: Algorithmic perspective
+                  </span>
+                  <div id="talk5" class="details-box">
+                    <p>Qiksit has been a popular software stack for quantum computing, with open surveys indicating 70% of quantum developers across the world using it for a few years now. In this talk, we will discuss the different layers of Qiskit, while exploring some of the key algorithms behind its functioning. We will start with the algorithms used in the core modules which perform efficient compilation of quantum programs. We will then move up the stack to cover a class of sampling-based algorithms that leverage hybrid quantum computing - classical supercomputing infrastructure and provide the state-of-the-art results for many applications of quantum computing. All these have accompanying open-source code in http://github.com/Qiskit to build on them for your research. </p>
+                  </div> </td>
+            </tr>
+
+        </tbody>
+    </table>
 </section>
 
 <section>
@@ -421,5 +556,12 @@
     Fine-Grained Cryptography Workshop &copy; 2025 | IIT Madras
 </footer>
 -->
+
+<script>
+    function toggleDetails(id) {
+      const box = document.getElementById(id);
+      box.style.display = (box.style.display === "block") ? "none" : "block";
+    }
+    </script>
 </body>
 </html>
