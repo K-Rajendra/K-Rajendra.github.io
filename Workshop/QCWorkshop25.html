@@ -198,7 +198,11 @@
     <h2>About the workshop</h2>
     <p>Quantum computing is an exciting computational resource whose capabilities are not yet fully understood. Shor's algorithm was a breakthrough result, providing a polynomial-time algorithm to the factoring problem using a quantum computer. Just a few years later, Grover showed how to perform searches in an unsorted database much faster than classical computers. Both of these algorithms are pioneering results that have gained significant attention from computer scientists. Over the last three decades, we have seen more exciting developments in these directions. </p>
     <p>In this workshop, we will have talks on recent advancements in quantum algorithms and quantum cryptography. The target audience includes senior undergraduate and postgraduate students, as well as early-career researchers. We also plan to cover the basics of quantum computing in the first two sessions before moving on to advanced or recent topics.</p>
-<section>
+    <p style="text-align: center; background-color: #fff3cd; padding: 8px;">
+        <strong>Workshop venue is room DLT8</strong>
+      </p>
+      
+    <section>
     <h2>Speakers</h2>
     <div class="card-grid">
         <div class="person-card">
@@ -351,7 +355,16 @@
             </tr>
             <tr>
                 <td>Shashwat Agrawal</td>
-                <td>Quantum Algorithms for Learning with Errors.</td>
+                <td><span class="details-link" onclick="toggleDetails('talk7')">
+                    Quantum Algorithms for Learning with Errors.
+                  </span>
+                  <div id="talk7" class="details-box">
+                    <p>Abstract: The Learning with Errors (LWE) problem has served as a security foundation for numerous cryptographic primitives. Not only is it the most prominent hardness assumption for post-quantum cryptography, but its algebraic simplicity enables the design of primitives with advanced functionalities. Thus, it is crucial to analyse the quantum fine-grained hardness of this problem.</p>
+ 
+                    <p>In this talk, our objective is to cover a few ideas in the quest for quantum algorithms for LWE. We will first look at the Dihedral Hidden Subgroup / Dihedral Coset problem (DCP), and Kuperberg’s sieving technique that gives a subexponential algorithm for this problem. We will then see Regev’s reduction from LWE to a faulty version of DCP. The faulty nature of this reduction hampers us from having a subexponential algorithm for LWE. Next, we will establish the equivalence of LWE to an extrapolated version of DCP (EDCP).</p>
+                        
+                    <p>We will then examine recent ventures in defining quantum variants of LWE. Specifically, we will define S|LWE>, and then look at a subexponential time algorithm solving S|LWE> for certain amplitudes. However, we only manage to reduce an LWE instance to an S|LWE>-like instance where the phase of the amplitude is unknown. This again seems to pose a barrier against a subexponential algorithm for LWE.</p>
+                </div> </td>
             </tr>
             <tr>
                 <td>Shweta Agrawal</td>
