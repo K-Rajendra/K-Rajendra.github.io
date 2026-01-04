@@ -70,6 +70,75 @@
                     margin-bottom: 15px;
                 }
             }
+            /* ================================
+                Teaching Assistants – Final Style
+                ================================ */
+
+            /* Container */
+            .ta-container {
+                display: flex;
+                justify-content: center;
+                gap: 30px;
+                margin-top: 20px;
+                flex-wrap: wrap;
+            }
+
+            /* TA Card */
+            .ta-details {
+                width: 280px;
+                background: linear-gradient(145deg, #ffffff, #f3f3ff);
+                padding: 18px 20px;
+                border-radius: 12px;
+                border: 1px solid #e0e0e0;
+                box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+                transition: transform 0.2s ease, box-shadow 0.2s ease;
+            }
+
+            /* Hover effect */
+            .ta-details:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+            }
+
+            /* Avatar (Initials) */
+            .ta-avatar {
+                width: 48px;
+                height: 48px;
+                background-color: #5b5fc7;
+                color: #ffffff;
+                font-weight: 600;
+                font-size: 1.1rem;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 10px;
+            }
+
+            /* Badge */
+            .ta-badge {
+                display: inline-block;
+                background-color: #e6e6fa;
+                color: #333;
+                font-size: 0.75rem;
+                padding: 4px 10px;
+                border-radius: 12px;
+                margin-bottom: 10px;
+            }
+
+            /* Text spacing */
+            .ta-details p {
+                margin: 6px 0;
+                font-size: 0.95rem;
+            }
+
+            /* Mobile */
+            @media (max-width: 768px) {
+                .ta-details {
+                    width: 90%;
+                }
+            }
+
         </style>
     </head>
 <body>
@@ -86,7 +155,7 @@
                 <p><strong>Email:</strong> rajendra@cse.iitd.ac.in</p>
                 <p><strong>Prerequisites:</strong> Good Understanding of Linear Algebra, Data Structures and Discrete Mathematics.</p>
                 <p><strong>Lecture Timings:</strong> Mondays and Thursdays, 3:30 PM - 5:00 PM; Venue: Bharti 305</p>
-                <p><strong>Office Hours:</strong> Wednesdays, 2 PM - 3 PM by appointment (<!-- Calendly link widget begin -->
+                <p><strong>Office Hours:</strong> Wednesdays, 2:30 PM - 3:30 PM by appointment (<!-- Calendly link widget begin -->
                     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
                     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
                     <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/rjndr2503/30min'});return false;">reserve the meeting slot</a>
@@ -122,6 +191,25 @@
         </section>-->
 
         <section>
+            <h2>Teaching Assistants</h2>
+            <div class="ta-container">
+                <div class="ta-details">
+                    <p><strong>Name:</strong> Poojan Shah</p>
+                    <p><strong>📧 Email:</strong> cs1221594@iitd.ac.in</p>
+                    <p><strong>⏰ Office Hours:</strong> TBA</p>
+                </div>
+                
+                <div class="ta-details">
+                    <p><strong>Name:</strong> Hridayansh Sharma</p>
+                    <p><strong>📧 Email:</strong> mcs242447@cse.iitd.ac.in </p>
+                    <p><strong>⏰ Office Hours:</strong> TBA</p>
+                </div>
+                
+                
+            </div>
+        </section> 
+
+        <section>
             <h2>References</h2>
             <ul>
                 <li><strong>[RL]</strong> Introduction to Quantum Algorithms Via Linear Algebra by Kenneth W. Regan and Richard Lipton.</li>
@@ -129,22 +217,6 @@
                 <li><strong>[NC]</strong>  Quantum Computation and Quantum Information by Michael A. Nielson and Isaac L. Chuang.</li>
             </ul>
         </section>
-
-        <section>
-            <h2>Teaching Assistants</h2>
-            <div class="ta-container">
-                <div class="ta-details">
-                    <p><strong>Name:</strong> Poojan Shah </p>
-                    <p><strong>Email:</strong> cs1221594@iitd.ac.in</p>
-                    <p><strong>Office Hours:</strong> TBA </p>
-                </div>
-                <div class="ta-details">
-                    <p><strong>Name:</strong> Hridayansh Sharma</p>
-                    <p><strong>Email:</strong> mcs242447@cse.iitd.ac.in </p>
-                    <p><strong>Office Hours:</strong> TBA</p>
-                </div>
-            </div>
-        </section> 
 
         <!--    
         <section>
