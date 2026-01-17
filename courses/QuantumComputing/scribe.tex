@@ -1,0 +1,164 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry} % for margins
+\usepackage[dvipsnames,svgnames]{xcolor} % for colors
+\usepackage[
+  colorlinks=true,
+  linkcolor=SteelBlue,
+  citecolor=SteelBlue,
+  urlcolor=SteelBlue
+]{hyperref} % for links and citations
+
+\setlength{\parindent}{0pt}
+
+%%%%%%%%%% FONT PACKAGES %%%%%%%%%%
+\usepackage{libertine} % for libertine font family
+\usepackage{amsmath,amssymb,amsthm} % for mathematical symbols
+\usepackage{braket} % for braket notation 
+\usepackage{mdframed} % for box 
+\usepackage{algorithm} % for pseudocode 
+\usepackage{algpseudocode}
+
+
+
+%%%%%%%%%% THEOREM ENVIRONMENTS (GLOBAL NUMBERING) %%%%%%%%%%
+
+% Master counter
+\newtheorem{theorem}{Theorem}
+
+% Share the same counter
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+
+
+%%%%%%%%%% MATH SYMBOLS %%%%%%%%%%
+\newcommand{\C}{\mathbf{C}}
+\newcommand{\R}{\mathbf{R}}
+\newcommand{\F}{\mathbf{F}}
+\renewcommand{\phi}{\varphi}
+\newcommand{\eps}{\varepsilon}
+
+%%%%%%%%%% MACROS %%%%%%%%%%
+\newcommand{\coursetitle}{COL7160 : Quantum Computing}
+\newcommand{\instructor}{Rajendra Kumar}
+\newcommand{\scribe}{Poojan Shah} % write your name here 
+\newcommand{\lecturenumber}{0} % write lecture number here 
+\newcommand{\lecturetitle}{Scribe Template} % write lecture title here
+
+
+\begin{document}
+
+ %%%%%%%%%% TITLE %%%%%%%%%%
+\begin{mdframed}
+\begin{center}
+    {\Large {\coursetitle}} \\[0.5em]
+    {\large {Lecture \lecturenumber : \lecturetitle}}
+\end{center}
+
+\vspace{0.8em}
+
+\noindent
+\begin{minipage}{0.48\textwidth}
+\textbf{Instructor:} \instructor
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\textwidth}
+\raggedleft
+\textbf{Scribe:} \scribe
+\end{minipage}
+\end{mdframed}
+\vspace{1em}
+
+%%%%%%%%%% BEGIN WRITING HERE %%%%%%%%%%
+\section{Introduction}
+
+This is the scribe template for COL7160 : Quantum Computing. If you are not familiar with \LaTeX, you can go through \href{https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes}{this tutorial} about \LaTeX and Overleaf. For the template, you have been provided with two files : you will write the main content in $\mathtt{scribe.tex}$ and add references (if necessary) to $\mathtt{refs.bib}$. For citing references, you can use the $\mathtt{\\cite}$ command. For example, the main references for this course will be \cite{dewolf2023quantumcomputinglecturenotes} and \cite{nielsenchuang2010}. 
+
+\section{Mathematical Notation}
+
+To ensure that the math in all the scribe notes is consistent, we have provided a list of commands that would be useful throughout the course. Real numbers are denoted by $\R$. Complex numbers are denoted by $\C$. For any $z = x+iy\in \C$, its modulus is $|z| = \sqrt{x^2+y^2}$ and its conjugate is $z^* = x-iy$. The vector space of all $n$ tuples of complex numbers $(z_1,\dots,z_n)$ is denoted by $\C^n$. A vector is denoted by a \emph{ket} $\ket{\psi} \in \C^n$. The vector \emph{dual} to $\ket{\psi}$ is represented by the \emph{bra} $\bra{\psi}$. The inner product between the vectors $\ket{\phi}$ and $\ket{\psi}$ is denoted by $\braket{\phi|\psi}$. $\ket{\phi}\otimes\ket{\psi}$ is the tensor product of $\ket{\phi}$ and $\ket{\psi}$. For a matrix $A$, $A^*$ is the complex conjugate of $A$, $A^\top$ is the transpose of $A$ and $A^\dagger$ is the Hermitian conjugate or adjoint of $A$. 
+
+\section{Definitions and Theorems}
+
+Throughout the scribe notes, we will use standard theorem-like environments
+to clearly distinguish between definitions, formal statements, and explanatory
+remarks. Below we illustrate how these environments are used.
+
+\begin{definition}
+A \emph{vector space} over a field $\F$ is a set $V$ together with two operations,
+called vector addition and scalar multiplication, satisfying the usual axioms
+(linearity, associativity, distributivity, and the existence of additive
+identities and inverses).
+\end{definition}
+
+\begin{example}
+The set $\C^n$ of $n$-tuples of complex numbers forms a vector space over $\C$
+with component-wise addition and scalar multiplication.
+\end{example}
+
+\begin{lemma}
+Let $V$ be a vector space and let $v \in V$. If $\alpha v = 0$ for some scalar
+$\alpha \in \F$, then either $\alpha = 0$ or $v = 0$.
+\end{lemma}
+
+\begin{proof}
+Suppose $\alpha \neq 0$. Then $\alpha^{-1}$ exists and
+\[
+v = \alpha^{-1}(\alpha v) = 0.
+\]
+\end{proof}
+
+\begin{theorem}
+Any finite-dimensional vector space admits a basis.
+\end{theorem}
+
+\begin{remark}
+Remarks are used for intuition, informal explanations, or connections to
+other parts of the course. They are not formal statements and typically do not
+require proofs.
+\end{remark}
+
+\medskip
+
+Unless stated otherwise, all definitions and theorems are numbered
+consecutively throughout the document, independent of section numbering.
+
+
+\section{Algorithms}
+
+Algorithms should be written in pseudocode.
+
+\begin{algorithm}[H]
+\caption{Gram-Schmidt Orthonormalization}
+\begin{algorithmic}[1]
+\State \textbf{Input:} A linearly independent set
+$\{\ket{w_1}, \ket{w_2}, \dots, \ket{w_d}\}$
+in a finite-dimensional inner-product space $V$.
+\State \textbf{Output:} An orthonormal basis
+$\{\ket{v_1}, \ket{v_2}, \dots, \ket{v_d}\}$ spanning $V$.
+\State $\ket{v_1} \gets \ket{w_1} / \|\ket{w_1}\|$
+
+\For{$k = 1$ to $d-1$}
+    \State $ \ket{u_{k+1}} \gets \ket{w_{k+1}}-\sum_{i=1}^{k}
+    \braket{v_i \mid w_{k+1}}\,\ket{v_i}$
+    \State
+    $ \ket{v_{k+1}} \gets \frac{\ket{u_{k+1}}}{\|\ket{u_{k+1}}\|} $
+\EndFor
+
+\State \Return $\{\ket{v_1}, \ket{v_2}, \dots, \ket{v_d}\}$
+\end{algorithmic}
+\end{algorithm}
+
+
+\bibliographystyle{alpha}
+\bibliography{refs}
+
+\end{document}
